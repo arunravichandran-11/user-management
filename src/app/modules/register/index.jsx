@@ -148,8 +148,8 @@ class RegisterComponent extends Component {
               value={user.password}
               onChange={this.handleChange}
               required={true}
-              required
               id='password'
+              type='password'
               label='Password'
               name='password'
             />

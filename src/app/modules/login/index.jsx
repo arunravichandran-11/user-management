@@ -97,6 +97,7 @@ class LoginComponent extends Component {
               fullWidth
               id='password'
               label='Password'
+              type='password'
               name='password'
             />
             <Button type='submit' size='large' variant='contained' color='primary' onClick={this.handleSubmit}>
