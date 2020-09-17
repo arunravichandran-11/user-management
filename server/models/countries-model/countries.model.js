@@ -1,24 +1,11 @@
-const mockCountries = [
-  {
-    id: 1,
-    name: 'India',
-  },
-  {
-    id: 2,
-    name: 'America',
-  },
-  {
-    id: 3,
-    name: 'Hongkong',
-  },
-];
+const countries = require('../../data/countries.mock');
 
 /**
  *
  * @param {*} req
  * @param {*} res
- * returns the list of contries
+ * returns the list of contries(mock data)
  */
 module.exports = (req, res) => {
-  res.send(mockCountries);
+  res.send(countries);
 };

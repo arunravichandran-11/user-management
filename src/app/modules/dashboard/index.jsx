@@ -8,15 +8,18 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
+import './dashboard.scss';
 
 class DashboardComponent extends Component {
   componentDidMount() {
     this.props.getUsers();
+    this.props.getProfile();
   }
   render() {
-    const {users} = this.props;
+    const {users, user} = this.props.users;
     return (
-      <div style={{border: '1px solid'}}>
+      <div className='dashboard-wrapper col-sm-12 col-md-12 col-lg-12 col-xs-12'>
+        <h1 style={{textAlign: 'center'}}>Welcome {user.firstName}</h1>
         <h1>User List</h1>
         {users && (
           <TableContainer>
@@ -43,7 +46,7 @@ class DashboardComponent extends Component {
                       <Typography>{user.lastName}</Typography>
                     </TableCell>
                     <TableCell align='right'>
-                      <Typography>{user.genderme}</Typography>
+                      <Typography>{user.gender}</Typography>
                     </TableCell>
                     <TableCell align='right'>
                       <Typography>{user.country && user.country.name}</Typography>
@@ -61,12 +64,14 @@ class DashboardComponent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    users: state.users.users,
+    users: state.users,
+    user: state.user,
   };
 };
 const mapDispactchToProps = (dispatch) => {
   return {
     getUsers: () => dispatch(dashboardActions.getAll()),
+    getProfile: () => dispatch(dashboardActions.getPersonalInformation()),
   };
 };
 

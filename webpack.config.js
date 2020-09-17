@@ -20,15 +20,10 @@ module.exports = {
       {
         // test: /\.s[ac]ss$/i,
         test: /\.s?css$/,
-        use: [
-          'style-loader', // Creates `style` nodes from JS stringss
-          'css-loader', // Translates CSS into CommonJS
-          'sass-loader', // Compiles Sass to CSS
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|svg|jpg|gif|jpeg)$/,
-        // use: ['file-loader'],
         use: [
           {
             loader: 'url-loader',
@@ -53,7 +48,6 @@ module.exports = {
     historyApiFallback: true,
   },
   externals: {
-    // global app config object
     config: JSON.stringify({
       apiUrl: 'http://localhost:5000',
     }),

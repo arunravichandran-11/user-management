@@ -135,7 +135,7 @@ class RegisterComponent extends Component {
     };
 
     return (
-      <Container style={containerStyle} component='main' maxWidth='lg'>
+      <Container style={containerStyle} component='main' maxWidth='sm'>
         <CssBaseline />
         <div className={classes.paper}>
           <Typography component='h1' variant='h5' style={{textAlign: 'center'}}>
@@ -148,8 +148,8 @@ class RegisterComponent extends Component {
               value={user.password}
               onChange={this.handleChange}
               required={true}
-              required
               id='password'
+              type='password'
               label='Password'
               name='password'
             />
