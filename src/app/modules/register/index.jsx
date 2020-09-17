@@ -135,7 +135,7 @@ class RegisterComponent extends Component {
     };
 
     return (
-      <Container style={containerStyle} component='main' maxWidth='lg'>
+      <Container style={containerStyle} component='main' maxWidth='sm'>
         <CssBaseline />
         <div className={classes.paper}>
           <Typography component='h1' variant='h5' style={{textAlign: 'center'}}>
