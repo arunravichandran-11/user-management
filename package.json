@@ -53,6 +53,7 @@
     "path": "^0.12.7",
     "sass": "^1.26.10",
     "terser-webpack-plugin": "^4.2.1",
+    "url-loader": "^4.1.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"

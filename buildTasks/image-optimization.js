@@ -2,13 +2,25 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const imageOptimizationConfig = {
   rules: [
+    // can be used later for loading some images assets in profile bg and dashboard
+    // {
+    //   test: /\.(jpe?g|png|gif|svg)$/,
+    //   use: [
+    //     {
+    //       loader: 'file-loader',
+    //       options: {
+    //         outputPath: 'images',
+    //       },
+    //     },
+    //   ],
+    // },
     {
-      test: /\.(jpe?g|png|gif|svg)$/,
+      test: /\.(png|jpg|gif)$/i,
       use: [
         {
-          loader: 'file-loader',
+          loader: 'url-loader',
           options: {
-            outputPath: 'images',
+            limit: 8192,
           },
         },
       ],
