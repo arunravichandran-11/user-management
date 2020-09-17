@@ -9,7 +9,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const router = require('./router/router');
 
-const port = 5000;
+const port = config.port || 2000;
 const DIST_DIR = path.join(__dirname, '../dist');
 
 app.use(

@@ -1,5 +1,7 @@
 # User management
 
+This codebase is basically for user login , registration and management(In Progress).
+
 ## Stack:
 
 1. ReactJS

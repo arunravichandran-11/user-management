@@ -10,7 +10,7 @@ module.exports = {
     },
   },
 
-  port: 2000,
+  port: 5000,
 
   // keys for authentication
   jwtKeys: {
