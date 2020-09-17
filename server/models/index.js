@@ -8,4 +8,5 @@ module.exports = {
   authenticate: authController,
   register: registrationController,
   getUsers: userController.getAllUsers,
+  getUsersById: userController.getById,
 };

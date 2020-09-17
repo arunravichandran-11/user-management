@@ -16,6 +16,8 @@ router.post('/users/register', model.register);
 
 router.get('/api/countries', model.getCountries);
 
+router.get('/api/users/:username', model.getUsersById);
+
 /**
  * Middleware to parse token and verify with jwt key.
  */
@@ -39,7 +41,7 @@ router.use('/api', (req, res, next) => {
     res.status(401).send({
       success: false,
       status: 401,
-      message: 'Unauthorized User! No token provided from the requested source.',
+      message: 'Unauthorized User! Check your credentials.',
     });
   }
 });

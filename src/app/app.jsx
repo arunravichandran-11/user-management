@@ -26,14 +26,16 @@ class App extends React.Component {
   render() {
     const {notify} = this.props;
     return (
-      <div className='root-container col-sm-9 col-md-8 col-lg-6 col-xs-12'>
-        <div className=''>
-          <div className=''>
-            {notify.type == 'error' && (
-              <Alert severity={notify.type} action={<Button color='inherit' size='small'></Button>}>
-                {notify.message}
-              </Alert>
-            )}
+      <div className='root-container'>
+        <div>
+          <div>
+            <div className='alert-message-wrapper'>
+              {notify.type == 'error' && (
+                <Alert severity={notify.type} action={<Button color='inherit' size='small'></Button>}>
+                  {notify.message}
+                </Alert>
+              )}
+            </div>
 
             <Suspense
               fallback={
