@@ -10,13 +10,29 @@ const dashboardActions = {
     return (dispatch) => {
       userService.getAll().then(
         (users) => {
-          console.log('here- iser');
           dispatch({type: 'GETALL_USER_SUCCESS', users});
           dispatch({type: 'NOTIFY_SUCCESS', message: users});
         },
         (error) => {
-          console.log('here- error');
           dispatch({type: 'GETALL_USER_FAIL', error});
+          dispatch({type: 'NOTIFY_ERROR', message: error});
+          history.push('/login');
+        }
+      );
+    };
+  },
+
+  getPersonalInformation: () => {
+    return (dispatch) => {
+      let {user} = JSON.parse(localStorage.getItem('user'));
+
+      userService.getUserById(user.username).then(
+        (user) => {
+          dispatch({type: 'GET_USER_SUCCESS', user});
+          dispatch({type: 'NOTIFY_SUCCESS', message: 'User Fetched'});
+        },
+        (error) => {
+          dispatch({type: 'GET_USER_FAIL', error});
           dispatch({type: 'NOTIFY_ERROR', message: error});
           history.push('/login');
         }

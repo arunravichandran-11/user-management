@@ -16,6 +16,8 @@ router.post('/users/register', model.register);
 
 router.get('/api/countries', model.getCountries);
 
+router.get('/api/users/:username', model.getUsersById);
+
 /**
  * Middleware to parse token and verify with jwt key.
  */

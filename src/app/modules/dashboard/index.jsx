@@ -12,13 +12,14 @@ import './dashboard.scss';
 
 class DashboardComponent extends Component {
   componentDidMount() {
-    console.log('thos');
     this.props.getUsers();
+    this.props.getProfile();
   }
   render() {
-    const {users} = this.props;
+    const {users, user} = this.props.users;
     return (
       <div className='dashboard-wrapper col-sm-12 col-md-12 col-lg-12 col-xs-12'>
+        <h1 style={{textAlign: 'center'}}>Welcome {user.firstName}</h1>
         <h1>User List</h1>
         {users && (
           <TableContainer>
@@ -63,12 +64,14 @@ class DashboardComponent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    users: state.users.users,
+    users: state.users,
+    user: state.user,
   };
 };
 const mapDispactchToProps = (dispatch) => {
   return {
     getUsers: () => dispatch(dashboardActions.getAll()),
+    getProfile: () => dispatch(dashboardActions.getPersonalInformation()),
   };
 };
 

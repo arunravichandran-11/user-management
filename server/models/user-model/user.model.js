@@ -16,6 +16,12 @@ const userController = {
     //   }
     // });
   },
+
+  getById: async (req, res) => {
+    let result = await Users.find({userName: req.params.username});
+
+    res.send(result);
+  },
 };
 
 module.exports = userController;

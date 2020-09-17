@@ -86,9 +86,25 @@ function getAll() {
 
   return fetch(`${config.apiUrl}/api/users`, requestOptions).then(handleResponse);
 }
+
+/**
+ * fetches the user by id.
+ * @param {string} username
+ * @return {Promise} getAllUsers
+ */
+function getUserById(username) {
+  const requestOptions = {
+    method: 'GET',
+    headers: authHeader(),
+  };
+
+  return fetch(`${config.apiUrl}/api/users/${username}`, requestOptions).then(handleResponse);
+}
+
 export const userService = {
   login,
   logout,
   register,
   getAll,
+  getUserById,
 };
