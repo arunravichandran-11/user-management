@@ -154,7 +154,6 @@ class RegisterComponent extends Component {
               name='password'
             />
             <TextField
-              type='password'
               variant='outlined'
               value={user.firstName}
               onChange={this.handleChange}
