@@ -15,12 +15,12 @@ const imageOptimizationConfig = {
     //   ],
     // },
     {
-      test: /\.(png|jpg|gif)$/i,
+      test: /\.(png|svg|jpg|gif|jpeg)$/,
       use: [
         {
           loader: 'url-loader',
           options: {
-            limit: 8192,
+            // limit: 8192,
           },
         },
       ],
